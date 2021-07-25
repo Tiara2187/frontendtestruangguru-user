@@ -10,9 +10,9 @@ const express = require("express");
 const app = express();
 app.use(compression());
 app.use(requireHTTPS);
-app.use(express.static("./dist"));
+app.use(express.static("./dist/angular-material-auth-ui"));
 
 app.get("/*", function(req, res) {
-    res.sendFile("index.html", {root: "dist/"});
+    res.sendFile("index.html", {root: "dist/angular-material-auth-ui/"});
   });
   app.listen(process.env.PORT || 4200);
