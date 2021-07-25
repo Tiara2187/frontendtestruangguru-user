@@ -1,0 +1,70 @@
+<div class="main-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+      <mat-card-header>
+        <mat-card-title>Register</mat-card-title>
+      </mat-card-header>
+  
+      <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="example-form">
+
+        <mat-card-content>
+          <mat-form-field class="example-full-width">
+            <input 
+            matInput 
+            type="text" 
+            id="username"
+            name="username" 
+            placeholder="Username" 
+            required
+            formControlName="username"/>
+            <small class="invalid-feedback" *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">Please fill a valid Username.</small>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input 
+            matInput 
+            type="email"
+            id="email" 
+            name="email" 
+            placeholder="Email Address" 
+            tabindex="10" 
+            required
+            formControlName="email"/>
+            <small class="invalid-feedback" *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">Please fill a valid Email.</small>
+          </mat-form-field>
+  
+          <mat-form-field class="example-full-width">
+            <input 
+            matInput 
+            type="text"
+            id="contactnumber" 
+            name="contactnumber" 
+            placeholder="Contact Number" 
+            maxlength="20"
+            required
+            formControlName="contactnumber"
+            />
+            <small class="invalid-feedback" *ngIf="!signupForm.get('contactnumber').valid && signupForm.get('contactnumber').touched">Please fill a valid Phone.</small>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input 
+            matInput
+            matInput 
+            type="text"
+            id="contactperson" 
+            name="contactperson" 
+            placeholder="Contact Person" 
+            maxlength="20"
+            required
+            formControlName="contactperson"/>
+            <small class="invalid-feedback" *ngIf="!signupForm.get('contactperson').valid && signupForm.get('contactperson').touched">Please fill a valid Phone.</small>
+          </mat-form-field>
+  
+  
+        </mat-card-content>
+  
+        <button type="submit" mat-stroked-button color="accent" class="btn-block">Register</button>
+  
+      </form>
+    </mat-card>
+  </div>
